@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0e0e0e">
+    <title>Sales Deal Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icon-192.png">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Export Button in Top Right -->
+        <button id="exportBtn" class="export-btn-corner">📥 EXPORT TO CSV</button>
+
+        <header>
+            <div class="company-name">InboundAI365</div>
+            <h1>⚡ SALES TRACKER</h1>
+            <p class="subtitle">Deal Closer Dashboard</p>
+        </header>
+
+        <div class="add-rep-section">
+            <input type="text" id="repName" placeholder="Enter sales rep name...">
+            <button id="addRepBtn">+ ADD REP</button>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-label">Total Deals</div>
+                <div class="stat-value" id="totalDeals">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Revenue</div>
+                <div class="stat-value" id="totalRevenue">$0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Avg Deal Size</div>
+                <div class="stat-value" id="avgDealSize">$0</div>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <div class="filter-group">
+                <label>Filter by Date Range:</label>
+                <select id="dateFilter">
+                    <option value="all">All Time</option>
+                    <option value="today">Today</option>
+                    <option value="week">This Week</option>
+                    <option value="month">This Month</option>
+                    <option value="custom">Custom Range</option>
+                </select>
+            </div>
+            <div id="customDateRange" class="custom-date-range" style="display: none;">
+                <input type="date" id="startDate">
+                <span style="margin: 0 10px;">to</span>
+                <input type="date" id="endDate">
+                <button id="applyDateFilter" class="apply-filter-btn">Apply</button>
+            </div>
+        </div>
+
+        <div class="analytics-section">
+            <h2 class="section-title">📊 PERFORMANCE ANALYTICS</h2>
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <div class="analytics-label">Top Performer</div>
+                    <div id="topPerformer" class="analytics-value">-</div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-label">Highest Single Deal</div>
+                    <div id="highestDeal" class="analytics-value">$0</div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-label">Total Reps</div>
+                    <div id="totalReps" class="analytics-value">0</div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-label">Deals Today</div>
+                    <div id="dealsToday" class="analytics-value">0</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="salesBoard" class="sales-board">
+            <!-- Sales reps will appear here -->
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
